@@ -1,10 +1,8 @@
-import './App.css'
-import { Container } from './components/container'
+import "./App.css";
+import { Container } from "./components/container";
 
-export const App=()=> {
-  return (
-    <Container/>
-  )
-}
+export const App = () => {
+  return <Container />;
+};
 
-export default App
+export default App;
