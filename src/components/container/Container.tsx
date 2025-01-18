@@ -9,7 +9,7 @@ import Typography from "@mui/material/Typography";
 const NAVIGATION: Navigation = [
   {
     segment: "chat",
-    title: "Chat",
+    title: "Chat Assistant",
     icon: <ChatIcon />,
   },
 ];
