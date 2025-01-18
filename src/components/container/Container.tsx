@@ -15,7 +15,38 @@ const NAVIGATION: Navigation = [
 ];
 
 const demoTheme = extendTheme({
-  colorSchemes: { light: true, dark: true },
+  colorSchemes: { light: {
+    palette: {
+      primary: {
+        main: '#009688',
+      },
+      secondary: {
+        main: '#26a69a',
+      },
+      background: {
+        default: '#ffffff', 
+      },
+      text: {
+        primary: '#333333', 
+      },
+    },
+  },
+  dark: {
+    palette: {
+      primary: {
+        main: '#26a69a',
+      },
+      secondary: {
+        main: '#009688',
+      },
+      background: {
+        default: '#121212',
+      },
+      text: {
+        primary: '#ffffff',
+      },
+    },
+  }, },
   colorSchemeSelector: "class",
   breakpoints: {
     values: {
@@ -67,7 +98,7 @@ export const Container = () => {
       router={router}
       theme={demoTheme}
       branding={{
-        logo: <img src="https://mui.com/static/logo.png" alt="MUI logo" />,
+        logo: <img src="/logo-round.png"  />,
         title: "CognifyEV",
       }}
     >
