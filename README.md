@@ -1,2 +1,1 @@
-# chat-ui-mvp
-TODO
+# CognifyEV Chat Assistant
