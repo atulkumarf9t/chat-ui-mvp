@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { extendTheme } from "@mui/material/styles";
 import ChatIcon from "@mui/icons-material/Chat";
 import { AppProvider, Navigation, Router } from "@toolpad/core/AppProvider";
@@ -77,6 +77,16 @@ const useDemoRouter = (initialPath: string): Router => {
 export const Container = () => {
   const router = useDemoRouter("/chat");
 
+  const [headerHeight, setHeaderHeight] = useState(0);
+
+  useEffect(() => {
+    const headerElement = document.querySelector("header");
+    if (headerElement) {
+      const headerHeight = headerElement.offsetHeight;
+      setHeaderHeight(headerHeight);
+    }
+  }, []);
+
   return (
     <AppProvider
       navigation={NAVIGATION}
@@ -88,7 +98,7 @@ export const Container = () => {
       }}
     >
       <DashboardLayout>
-        <Chat />
+        <Chat headerHeight={headerHeight} />
       </DashboardLayout>
     </AppProvider>
   );

@@ -1,6 +1,6 @@
 import ChatBot from "react-chatbotify";
 
-export const Chat = () => {
+export const Chat = ({ headerHeight }: { headerHeight: number }) => {
   async function postQuery(query: string) {
     try {
       const response = await fetch("https://fakestoreapi.com/products", {
@@ -30,27 +30,25 @@ export const Chat = () => {
   };
 
   return (
-    <div style={{ margin: "4% 0 0 0", overflow: "hidden" }}>
-      <ChatBot
-        styles={{
-          chatWindowStyle: {
-            width: "100%",
-          },
-        }}
-        settings={{
-          general: {
-            embedded: true,
-            primaryColor: "#009688",
-            secondaryColor: "#26a69a",
-            fontFamily:
-              "Inter, system-ui, Avenir, Helvetica, Arial, sans-serif",
-            showFooter: false,
-            showHeader: false,
-          },
-          chatHistory: { storageKey: "cognify-ev-chat-assisstant" },
-        }}
-        flow={flow}
-      />
-    </div>
+    <ChatBot
+      styles={{
+        chatWindowStyle: {
+          width: "100%",
+          height: `calc(100dvh - ${headerHeight}px)`,
+        },
+      }}
+      settings={{
+        general: {
+          embedded: true,
+          primaryColor: "#009688",
+          secondaryColor: "#26a69a",
+          fontFamily: "Inter, system-ui, Avenir, Helvetica, Arial, sans-serif",
+          showFooter: false,
+          showHeader: false,
+        },
+        chatHistory: { storageKey: "cognify-ev-chat-assisstant" },
+      }}
+      flow={flow}
+    />
   );
 };
