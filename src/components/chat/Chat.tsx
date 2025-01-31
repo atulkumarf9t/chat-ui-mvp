@@ -30,12 +30,11 @@ export const Chat = () => {
   };
 
   return (
-    <div style={{ margin: ".5%", overflow: "hidden" }}>
+    <div style={{ margin: "4% 0 0 0", overflow: "hidden" }}>
       <ChatBot
         styles={{
           chatWindowStyle: {
             width: "100%",
-            height: "90dvh",
           },
         }}
         settings={{
