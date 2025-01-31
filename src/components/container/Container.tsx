@@ -3,8 +3,7 @@ import { extendTheme } from "@mui/material/styles";
 import ChatIcon from "@mui/icons-material/Chat";
 import { AppProvider, Navigation, Router } from "@toolpad/core/AppProvider";
 import { DashboardLayout } from "@toolpad/core/DashboardLayout";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
+import { Chat } from "../chat";
 
 const NAVIGATION: Navigation = [
   {
@@ -75,22 +74,6 @@ const useDemoRouter = (initialPath: string): Router => {
   return router;
 };
 
-const DemoPageContent = ({ pathname }: { pathname: string }) => {
-  return (
-    <Box
-      sx={{
-        py: 4,
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        textAlign: "center",
-      }}
-    >
-      <Typography>Dashboard content for {pathname}</Typography>
-    </Box>
-  );
-};
-
 export const Container = () => {
   const router = useDemoRouter("/chat");
 
@@ -105,7 +88,7 @@ export const Container = () => {
       }}
     >
       <DashboardLayout>
-        <DemoPageContent pathname={router.pathname} />
+        <Chat />
       </DashboardLayout>
     </AppProvider>
   );
