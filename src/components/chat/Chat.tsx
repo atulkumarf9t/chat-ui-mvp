@@ -30,25 +30,28 @@ export const Chat = () => {
   };
 
   return (
-    <ChatBot
-      styles={{
-        chatWindowStyle: {
-          width: "100%",
-          height: "100%",
-        },
-      }}
-      settings={{
-        general: {
-          embedded: true,
-          primaryColor: "#009688",
-          secondaryColor: "#26a69a",
-          fontFamily: "Inter, system-ui, Avenir, Helvetica, Arial, sans-serif",
-          showFooter: false,
-          showHeader: false,
-        },
-        chatHistory: { storageKey: "cognify-ev-chat-assisstant" },
-      }}
-      flow={flow}
-    />
+    <div style={{ margin: ".5%", overflow: "hidden" }}>
+      <ChatBot
+        styles={{
+          chatWindowStyle: {
+            width: "100%",
+            height: "90dvh",
+          },
+        }}
+        settings={{
+          general: {
+            embedded: true,
+            primaryColor: "#009688",
+            secondaryColor: "#26a69a",
+            fontFamily:
+              "Inter, system-ui, Avenir, Helvetica, Arial, sans-serif",
+            showFooter: false,
+            showHeader: false,
+          },
+          chatHistory: { storageKey: "cognify-ev-chat-assisstant" },
+        }}
+        flow={flow}
+      />
+    </div>
   );
 };
