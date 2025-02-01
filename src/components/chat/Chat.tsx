@@ -4,7 +4,7 @@ export const Chat = ({ headerHeight }: { headerHeight: number }) => {
   async function postQuery(query: string) {
     try {
       const response = await fetch(
-        "https://5dfb-27-100-12-109.ngrok-free.app/query",
+        "https://877c-27-100-12-123.ngrok-free.app/query",
         {
           method: "POST",
           headers: {
