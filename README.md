@@ -8,3 +8,5 @@
 - run `npm install`
 - run `npm run dev`
 - go to `localhost:5173` and start chatting
+
+![image](https://github.com/user-attachments/assets/82a78b81-ecc3-4586-924d-da33af28e2b5)
