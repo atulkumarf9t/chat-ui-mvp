@@ -3,14 +3,19 @@ import ChatBot from "react-chatbotify";
 export const Chat = ({ headerHeight }: { headerHeight: number }) => {
   async function postQuery(query: string) {
     try {
-      const response = await fetch("https://fakestoreapi.com/products", {
+      const response = await fetch("http://localhost:8000/query", {
         method: "POST",
+        headers: {
+          "Content-Type": "application/json", 
+        },
         body: JSON.stringify({
           query: query,
+          top_k: 3,
+          conversation_id: "string",
         }),
       });
       const data = await response.json();
-      return data.id;
+      return data;
     } catch (error) {
       return `${error}! Oh no I don't know what to say!`;
     }
@@ -23,7 +28,7 @@ export const Chat = ({ headerHeight }: { headerHeight: number }) => {
     loop: {
       message: async ({ userInput }: { userInput: string }) => {
         const result = await postQuery(userInput);
-        return `${result} : You have sent me - '${userInput}'`;
+        return result.answer;
       },
       path: "loop",
     },
